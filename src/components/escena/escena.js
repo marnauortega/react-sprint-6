@@ -1,3 +1,3 @@
-export const Escena = () => {
-  return "El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial";
+export const Escena = (props) => {
+  return <p>{props.content}</p>;
 };

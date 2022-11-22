@@ -1,14 +1,21 @@
+import React from "react";
 import ReactDOM from "react-dom";
 import { Escena } from "./components/escena/escena";
-
-const main = document.querySelector("main");
+import escenes from "./data/escenes.json";
 
 const App = () => {
   return (
     <>
-      <Escena />
+      {escenes.map((escena) => (
+        <Escena content={escena} />
+      ))}
     </>
   );
 };
 
-ReactDOM.render(<App />, main);
+const main = document.querySelector("main");
+ReactDOM.createRoot(main).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
