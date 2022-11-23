@@ -8,7 +8,10 @@ export const Escenes = ({ currentScene }) => {
   });
 
   return (
+    <>
       {SceneList}
+      <img src="../../img/1.jpg"></img>
+    </>
   );
 };
 
