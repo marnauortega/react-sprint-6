@@ -1,14 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Escena } from "./components/escena/escena";
+import { useState } from "react";
+import { Navigation } from "./components/navigation/navigation";
+import { Escenes } from "./components/escena/escena";
 import escenes from "./data/escenes.json";
 
 const App = () => {
+  let [currentScene, setScene] = useState(0);
+
+  const nextScene = () => {
+    currentScene < escenes.length - 1 ? setScene(++currentScene) : setScene(escenes.length - 1);
+  };
+
+  const prevScene = () => {
+    currentScene > 0 ? setScene(--currentScene) : 0;
+  };
   return (
     <>
-      {escenes.map((escena) => (
-        <Escena content={escena} />
-      ))}
+      <Navigation next={nextScene} prev={prevScene} />
+      <Escenes currentScene={currentScene} />
     </>
   );
 };
