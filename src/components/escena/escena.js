@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Escenes = ({ currentScene }) => {
   const SceneList = data.map((escena, index) => {
     return (
-      <li key={data.id}>
+      <li key={escena.id}>
         <StyledScene className={index === currentScene ? "focus" : ""}>{escena.content}</StyledScene>
       </li>
     );
